@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: Employees API
+  version: 1.0.0
+paths:
+  /employees:
+    get:
+      tags:
+        - Employee
+      operationId: getEmployees
+      responses:
+        200:
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Employee"
+
+components:
+  schemas:
+    Employee:
+      properties:
+        firstName:
+          type: string
+          description: First Name
+          example: "John"
+        lastName:
+          type: string
+          description: Last Name
+          example: "Lim"
+        age:
+          type: integer
+          description: Age
+          example: 28
+      required:
+        - firstName
+        - lastName
+        - age
